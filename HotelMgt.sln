@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelMgt", "HotelMgt.csproj", "{67503561-0D62-45A3-B0CB-23B9BC43FA3A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HotelManagment", "HotelManagment", "{AE40C83E-645E-4B67-A5AA-41F4D660E50B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67503561-0D62-45A3-B0CB-23B9BC43FA3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67503561-0D62-45A3-B0CB-23B9BC43FA3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67503561-0D62-45A3-B0CB-23B9BC43FA3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67503561-0D62-45A3-B0CB-23B9BC43FA3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67503561-0D62-45A3-B0CB-23B9BC43FA3A} = {AE40C83E-645E-4B67-A5AA-41F4D660E50B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D511B6E-C026-41AC-9E81-BE43C196E432}
+	EndGlobalSection
+EndGlobal
