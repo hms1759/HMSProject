@@ -36,7 +36,7 @@ namespace HotelMgt
             {
                 Options.UseSqlServer(Configuration.GetConnectionString("DevConnection"));
              });
-            services.AddScoped<IVisitorService, VisitorService>();
+            services.AddScoped<ILoginService, LoginService>();
 
             services.AddIdentity<IdentityUser, IdentityRole>(options =>
                 {
@@ -61,7 +61,7 @@ namespace HotelMgt
                     RequireExpirationTime = true,
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = Configuration["Jwt:Issuer"],
-                    ValidAudience = Configuration["Jwt:Audience"],
+                    ValidAudience = Configuration["Jwt:Issuer"],
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 };
 
@@ -94,7 +94,7 @@ namespace HotelMgt
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

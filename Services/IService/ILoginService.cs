@@ -1,5 +1,6 @@
 ﻿
 using Application.Share;
+using HotelMgt.Application.Shared;
 using HotelMgt.Models;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace HotelMgt.Services.IService
 {
-   public interface IVisitorService
+   public interface ILoginService
     {
         Task<UserManagmentResponse> RegistrationASync(RegistrationViewModel model);
+        Task<UserManagmentResponse> LoginAsync(LoginViewModel model);
     }
 }

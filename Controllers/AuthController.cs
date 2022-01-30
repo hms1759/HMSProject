@@ -1,4 +1,5 @@
 ﻿using Application.Share;
+using HotelMgt.Application.Shared;
 using HotelMgt.Services.IService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -14,8 +15,8 @@ namespace HotelMgt.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private IVisitorService _iVisitorservices;
-        public AuthController(IVisitorService iVisitorservices)
+        private ILoginService _iVisitorservices;
+        public AuthController(ILoginService iVisitorservices)
         {
             _iVisitorservices = iVisitorservices;
         }
@@ -36,7 +37,24 @@ namespace HotelMgt.Controllers
             }
             return BadRequest("Some properties are not Valid" );
         }
+        [HttpPost]
+        [Route("Login")]
+        public async Task<IActionResult> LoginAsync([FromBody] LoginViewModel model)
+        {
+            if(ModelState.IsValid)
+            {
+                var result = await _iVisitorservices.LoginAsync(model);
+                if (result.IsSuccessful)
+                {
+
+                    return Ok(result);
+                }
+                return BadRequest(result);
+            }
+            return BadRequest("Some properties are not Valid");
+        }
+    }
     
 
-    }
+    
 }
