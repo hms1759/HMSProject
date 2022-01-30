@@ -19,7 +19,8 @@ namespace HotelMgt.Controllers
         {
             _iVisitorservices = iVisitorservices;
         }
-        [HttpPost("Register")]
+        [HttpPost]
+        [Route("Register")]
         public async Task<IActionResult> RegisterAsync([FromBody] RegistrationViewModel model)
         {
 
@@ -33,7 +34,9 @@ namespace HotelMgt.Controllers
                 }
                 return BadRequest(result);
             }
-            return BadRequest("Some properties are not VAlid" );
+            return BadRequest("Some properties are not Valid" );
         }
+    
+
     }
 }

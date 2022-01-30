@@ -20,7 +20,7 @@ namespace Application.Share
         [Compare("Password", ErrorMessage = ("Password not Match"))]
         [NotMapped]
         public string ConfirmPassword { get; set; }
-        public string VisitoAddress { get; set; }
+        public string VisitorAddress { get; set; }
         public string Occupation { get; set; }
     }
 }
