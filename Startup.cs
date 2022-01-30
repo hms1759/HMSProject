@@ -79,11 +79,18 @@ namespace HotelMgt
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "HotelMgt", Version = "v1" });
             });
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            app.UseCors(options => options.AllowAnyOrigin()
+                                        ///  .WithOrigins("http://localhost:3001")
+                                        .AllowAnyMethod()
+                                        .AllowAnyHeader());
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
